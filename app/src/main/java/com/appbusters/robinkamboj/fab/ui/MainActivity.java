@@ -1,4 +1,4 @@
-package com.appbusters.robinkamboj.fab;
+package com.appbusters.robinkamboj.fab.ui;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+
+import com.appbusters.robinkamboj.fab.R;
 
 public class MainActivity extends AppCompatActivity {
 
