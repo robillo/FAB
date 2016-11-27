@@ -21,7 +21,12 @@
         <activity
             android:name=".searchableActivity"
             android:label="@string/title_activity_searchable"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.SearchableInfo" android:resource="@xml/searchable"/>
+        </activity>
     </application>
 
 </manifest>
