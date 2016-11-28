@@ -15,9 +15,9 @@ import com.appbusters.robinkamboj.fab.R;
 public class View_Holder extends RecyclerView.ViewHolder{
 
     CardView cv;
-    TextView title;
-    TextView description;
-    ImageView imageView;
+    public TextView title;
+    public TextView description;
+    public ImageView imageView;
 
     public View_Holder(View viewItem){
         super(viewItem);

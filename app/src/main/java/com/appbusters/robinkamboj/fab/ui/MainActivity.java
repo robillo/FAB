@@ -3,6 +3,8 @@ package com.appbusters.robinkamboj.fab.ui;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
@@ -11,6 +13,11 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import com.appbusters.robinkamboj.fab.R;
+import com.appbusters.robinkamboj.fab.adapter.RecyclerViewAdapter;
+import com.appbusters.robinkamboj.fab.model.Data;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
         fabL2.startAnimation(fab_close);
         fabR1.startAnimation(fab_close);
         fabR2.startAnimation(fab_close);
+
+        List<Data> data= fillWithData();
+        RecyclerView recyclerView= (RecyclerView) findViewById(R.id.recyclerview);
+        RecyclerViewAdapter adapter= new RecyclerViewAdapter(data, getApplication());
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,6 +100,21 @@ public class MainActivity extends AppCompatActivity {
             fabR2.startAnimation(fab_close);
             FabClosed=true;
         }
+    }
+
+    public List<Data> fillWithData() {
+        List<Data> data= new ArrayList<>();
+
+        data.add(new Data(getResources().getString(R.string.app_name), "Following the destruction of Metropolis, Batman embarks on a personal vendetta against Superman ", R.mipmap.ic_launcher));
+        data.add(new Data(getResources().getString(R.string.app_name), "X-Men: Apocalypse is an upcoming American superhero film based on the X-Men characters that appear in Marvel Comics ", R.mipmap.ic_launcher));
+        data.add(new Data("Captain America: Civil War", "A feud between Captain America and Iron Man leaves the Avengers in turmoil.  ", R.mipmap.ic_launcher));
+        data.add(new Data("Kung Fu Panda 3", "After reuniting with his long-lost father, Po  must train a village of pandas", R.mipmap.ic_launcher));
+        data.add(new Data(getResources().getString(R.string.app_name), "Following the destruction of Metropolis, Batman embarks on a personal vendetta against Superman ", R.mipmap.ic_launcher));
+        data.add(new Data(getResources().getString(R.string.app_name), "X-Men: Apocalypse is an upcoming American superhero film based on the X-Men characters that appear in Marvel Comics ", R.mipmap.ic_launcher));
+        data.add(new Data("Captain America: Civil War", "A feud between Captain America and Iron Man leaves the Avengers in turmoil.  ", R.mipmap.ic_launcher));
+        data.add(new Data("Kung Fu Panda 3", "After reuniting with his long-lost father, Po  must train a village of pandas", R.mipmap.ic_launcher));
+
+        return data;
     }
 
 }

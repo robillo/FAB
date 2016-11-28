@@ -19,36 +19,38 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<View_Holder>{
 
-    List<Data> list= Collections.emptyList();
+    List<Data> list = Collections.emptyList();          //Linked List
     Context context;
 
-    public RecyclerViewAdapter(List<Data> list, Context context){
-        this.list=list;
-        this.context=context;
+    public RecyclerViewAdapter(List<Data> list, Context context) {
+        this.list = list;
+        this.context = context;
     }
 
     @Override
     public View_Holder onCreateViewHolder(ViewGroup parent, int viewType) {
-        //inflate the layout and initialize the view holder
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.row_layout,parent,false);
-        View_Holder holder= new View_Holder(v);
+        //Inflate the layout, initialize the View Holder
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_layout, parent, false);
+        View_Holder holder = new View_Holder(v);
         return holder;
+
     }
 
     @Override
     public void onBindViewHolder(View_Holder holder, int position) {
 
-        //use the provided View_Holder given in the ocCreateViewHolder to populate the current row in RecyclerView
+        //Use the provided View Holder on the onCreateViewHolder method to populate the current row on the RecyclerView
         holder.title.setText(list.get(position).title);
         holder.description.setText(list.get(position).description);
-        holder.imageId.setText(list.get(position).imageId);
+        holder.imageView.setImageResource(list.get(position).imageId);
 
         //animate(holder);
+
     }
 
     @Override
     public int getItemCount() {
-        //return the number of rows the recyclerView will be displaying
+        //returns the number of elements the RecyclerView will display
         return list.size();
     }
 
@@ -57,15 +59,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<View_Holder>{
         super.onAttachedToRecyclerView(recyclerView);
     }
 
-    //Insert a new row to the recyclerview at a given position
-    public  void insert(int position, Data data){
-        list.add(position,data);
+    // Insert a new item to the RecyclerView on a predefined position
+    public void insert(int position, Data data) {
+        list.add(position, data);
         notifyItemInserted(position);
     }
 
-    //Delete a row at a given position of the recyclerview
-    public void remove(Data data){
-        int position= list.indexOf(data);
+    // Remove a RecyclerView item containing a specified Data object
+    public void remove(Data data) {
+        int position = list.indexOf(data);
         list.remove(position);
         notifyItemRemoved(position);
     }
