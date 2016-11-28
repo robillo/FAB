@@ -96,14 +96,14 @@ public class Level1 extends AppCompatActivity {
     public List<Data> fillWithData() {
         List<Data> data= new ArrayList<>();
 
-        data.add(new Data(getResources().getString(R.string.app_name), "Following the destruction of Metropolis, Batman embarks on a personal vendetta against Superman ", R.mipmap.ic_launcher));
-        data.add(new Data(getResources().getString(R.string.app_name), "X-Men: Apocalypse is an upcoming American superhero film based on the X-Men characters that appear in Marvel Comics ", R.mipmap.ic_launcher));
-        data.add(new Data("Captain America: Civil War", "A feud between Captain America and Iron Man leaves the Avengers in turmoil.  ", R.mipmap.ic_launcher));
-        data.add(new Data("Kung Fu Panda 3", "After reuniting with his long-lost father, Po  must train a village of pandas", R.mipmap.ic_launcher));
-        data.add(new Data(getResources().getString(R.string.app_name), "Following the destruction of Metropolis, Batman embarks on a personal vendetta against Superman ", R.mipmap.ic_launcher));
-        data.add(new Data(getResources().getString(R.string.app_name), "X-Men: Apocalypse is an upcoming American superhero film based on the X-Men characters that appear in Marvel Comics ", R.mipmap.ic_launcher));
-        data.add(new Data("Captain America: Civil War", "A feud between Captain America and Iron Man leaves the Avengers in turmoil.  ", R.mipmap.ic_launcher));
-        data.add(new Data("Kung Fu Panda 3", "After reuniting with his long-lost father, Po  must train a village of pandas", R.mipmap.ic_launcher));
+        data.add(new Data("Denise and Fleas", "LEVEL 1 TT 1", R.drawable.one));
+        data.add(new Data("Santa's Suit", "LEVEL 1 TT 2", R.drawable.one));
+        data.add(new Data("Ice Cream Screams", "LEVEL 1 TT 3", R.drawable.one));
+        data.add(new Data("Slimy Snails", "LEVEL 1 TT 4", R.drawable.one));
+        data.add(new Data("Sinking Sands", "LEVEL 1 TT 5", R.drawable.one));
+        data.add(new Data("Black Dog", "LEVEL 1 TT 6", R.drawable.one));
+        data.add(new Data("Tom", "LEVEL 1 TT 7", R.drawable.one));
+        data.add(new Data("Yelling Yeti", "LEVEL 1 TT 8", R.drawable.one));
 
         return data;
     }
