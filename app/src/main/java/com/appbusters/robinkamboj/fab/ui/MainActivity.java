@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         rotate_forward= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_forward);
         rotate_backward= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_backward);
         Animation fab_close_initial = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_close_initial);
+        Animation alpha_initial = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.alpha_initial);
+        fab.startAnimation(alpha_initial);
         fabL1.startAnimation(fab_close_initial);
         fabL2.startAnimation(fab_close_initial);
         fabR1.startAnimation(fab_close_initial);

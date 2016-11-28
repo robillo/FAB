@@ -3,9 +3,14 @@
     android:fillAfter="true">
     <rotate
         android:fromDegrees="0"
-        android:toDegrees="45"
+        android:toDegrees="135"
         android:pivotX="50%"
         android:pivotY="50%"
         android:duration="300"
         android:interpolator="@android:anim/linear_interpolator"/>
+    <alpha
+        android:fromAlpha="0.5"
+        android:toAlpha="1.0"
+        android:duration="300"
+        android:interpolator="@android:anim/accelerate_interpolator"/>
 </set>
