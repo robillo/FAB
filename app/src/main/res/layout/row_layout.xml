@@ -16,39 +16,42 @@
         android:clickable="true"
         android:foreground="?android:attr/selectableItemBackground">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:weightSum="3"
+            android:padding="5dp">
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginRight="16dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
                 android:src="@android:mipmap/sym_def_app_icon"/>
 
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/imageView"
-                android:text="Title"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/title"
-                android:layout_toRightOf="@+id/imageView"
-                android:text="Description" />
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Title"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </android.support.v7.widget.CardView>
 

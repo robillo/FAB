@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">FAB</string>
+    <string name="app_name">Tongue Twisters</string>
     <string name="action_settings">Settings</string>
     <string name="action_search">Search</string>
-    <string name="title_activity_searchable">searchableActivity</string>
-    <string name="title_activity_level1">Level1</string>
+    <string name="title_activity_searchable">Search</string>
+    <string name="title_activity_level1">Level 1</string>
 </resources>
