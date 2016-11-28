@@ -19,7 +19,7 @@ public class View_Holder extends RecyclerView.ViewHolder{
     TextView description;
     ImageView imageView;
 
-    View_Holder(View viewItem){
+    public View_Holder(View viewItem){
         super(viewItem);
         cv= (CardView) viewItem.findViewById(R.id.cardView);
         title= (TextView) viewItem.findViewById(R.id.title);

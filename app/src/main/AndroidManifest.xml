@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".searchableActivity"
+            android:name=".ui.searchableActivity"
             android:label="@string/title_activity_searchable"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
