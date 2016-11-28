@@ -2,13 +2,12 @@ package com.appbusters.robinkamboj.fab.ui;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
@@ -19,7 +18,17 @@ import com.appbusters.robinkamboj.fab.model.Data;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+import static com.appbusters.robinkamboj.fab.R.anim.fab_close;
+import static com.appbusters.robinkamboj.fab.R.anim.fab_open;
+import static com.appbusters.robinkamboj.fab.R.anim.rotate_backward;
+import static com.appbusters.robinkamboj.fab.R.anim.rotate_forward;
+import static com.appbusters.robinkamboj.fab.R.id.fab;
+import static com.appbusters.robinkamboj.fab.R.id.fabL1;
+import static com.appbusters.robinkamboj.fab.R.id.fabL2;
+import static com.appbusters.robinkamboj.fab.R.id.fabR1;
+import static com.appbusters.robinkamboj.fab.R.id.fabR2;
+
+public class Level1 extends AppCompatActivity {
 
     FloatingActionButton fab,fabL1,fabL2,fabR1,fabR2;
     private Animation rotate_forward,rotate_backward,fab_open,fab_close;
@@ -28,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_level1);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -46,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
         fabR1.startAnimation(fab_close);
         fabR2.startAnimation(fab_close);
 
+        List<Data> data= fillWithData();
+        RecyclerView recyclerView= (RecyclerView) findViewById(R.id.recyclerview);
+        RecyclerViewAdapter adapter= new RecyclerViewAdapter(data, getApplication());
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,28 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 animateFab();
             }
         });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     private void animateFab() {
@@ -97,4 +89,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public List<Data> fillWithData() {
+        List<Data> data= new ArrayList<>();
+
+        data.add(new Data(getResources().getString(R.string.app_name), "Following the destruction of Metropolis, Batman embarks on a personal vendetta against Superman ", R.mipmap.ic_launcher));
+        data.add(new Data(getResources().getString(R.string.app_name), "X-Men: Apocalypse is an upcoming American superhero film based on the X-Men characters that appear in Marvel Comics ", R.mipmap.ic_launcher));
+        data.add(new Data("Captain America: Civil War", "A feud between Captain America and Iron Man leaves the Avengers in turmoil.  ", R.mipmap.ic_launcher));
+        data.add(new Data("Kung Fu Panda 3", "After reuniting with his long-lost father, Po  must train a village of pandas", R.mipmap.ic_launcher));
+        data.add(new Data(getResources().getString(R.string.app_name), "Following the destruction of Metropolis, Batman embarks on a personal vendetta against Superman ", R.mipmap.ic_launcher));
+        data.add(new Data(getResources().getString(R.string.app_name), "X-Men: Apocalypse is an upcoming American superhero film based on the X-Men characters that appear in Marvel Comics ", R.mipmap.ic_launcher));
+        data.add(new Data("Captain America: Civil War", "A feud between Captain America and Iron Man leaves the Avengers in turmoil.  ", R.mipmap.ic_launcher));
+        data.add(new Data("Kung Fu Panda 3", "After reuniting with his long-lost father, Po  must train a village of pandas", R.mipmap.ic_launcher));
+
+        return data;
+    }
 }
