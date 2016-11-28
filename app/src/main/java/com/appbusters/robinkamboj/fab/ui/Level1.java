@@ -31,7 +31,7 @@ import static com.appbusters.robinkamboj.fab.R.id.fabR2;
 public class Level1 extends AppCompatActivity {
 
     FloatingActionButton fab,fabL1,fabL2,fabR1,fabR2;
-    private Animation rotate_forward,rotate_backward,fab_open,fab_close;
+    private Animation rotate_forward,rotate_backward,fab_open,fab_close,fab_close_initial;
     private boolean FabClosed=true;
 
     @Override
@@ -50,10 +50,11 @@ public class Level1 extends AppCompatActivity {
         fab_close= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fab_close);
         rotate_forward= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_forward);
         rotate_backward= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_backward);
-        fabL1.startAnimation(fab_close);
-        fabL2.startAnimation(fab_close);
-        fabR1.startAnimation(fab_close);
-        fabR2.startAnimation(fab_close);
+        fab_close_initial= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fab_close_initial);
+        fabL1.startAnimation(fab_close_initial);
+        fabL2.startAnimation(fab_close_initial);
+        fabR1.startAnimation(fab_close_initial);
+        fabR2.startAnimation(fab_close_initial);
 
         List<Data> data= fillWithData();
         RecyclerView recyclerView= (RecyclerView) findViewById(R.id.recyclerview);

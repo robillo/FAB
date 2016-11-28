@@ -1,5 +1,6 @@
 package com.appbusters.robinkamboj.fab.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +23,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     FloatingActionButton fab,fabL1,fabL2,fabR1,fabR2;
-    private Animation rotate_forward,rotate_backward,fab_open,fab_close;
+    private Animation rotate_forward,rotate_backward,fab_open,fab_close,fab_close_initial;
     private boolean FabClosed=true;
 
     @Override
@@ -41,10 +42,11 @@ public class MainActivity extends AppCompatActivity {
         fab_close= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fab_close);
         rotate_forward= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_forward);
         rotate_backward= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_backward);
-        fabL1.startAnimation(fab_close);
-        fabL2.startAnimation(fab_close);
-        fabR1.startAnimation(fab_close);
-        fabR2.startAnimation(fab_close);
+        fab_close_initial= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fab_close_initial);
+        fabL1.startAnimation(fab_close_initial);
+        fabL2.startAnimation(fab_close_initial);
+        fabR1.startAnimation(fab_close_initial);
+        fabR2.startAnimation(fab_close_initial);
 
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -95,6 +97,11 @@ public class MainActivity extends AppCompatActivity {
             fabR2.startAnimation(fab_close);
             FabClosed=true;
         }
+    }
+
+    public void level1(View view){
+        Intent i= new Intent(this, Level1.class);
+        startActivity(i);
     }
 
 }
