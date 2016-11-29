@@ -62,7 +62,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Speak"
+                        android:text="Mark as read"
+                        android:textColor="#FF9C2C"
                         android:background="?attr/selectableItemBackground"/>
                 </LinearLayout>
 
