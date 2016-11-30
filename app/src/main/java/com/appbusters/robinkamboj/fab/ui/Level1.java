@@ -25,11 +25,6 @@ public class Level1 extends AppCompatActivity {
     private Animation fab_open;
     private Animation fab_close;
     private boolean FabClosed=true;
-    public static int LevelNo=1;
-    public String[] TTs= {getResources().getString(R.string.oneone),getResources().getString(R.string.onetwo),
-            getResources().getString(R.string.onethree),getResources().getString(R.string.onefour),
-            getResources().getString(R.string.onefive), getResources().getString(R.string.onesix),
-            getResources().getString(R.string.oneseven)};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,9 +87,12 @@ public class Level1 extends AppCompatActivity {
     public List<Data> fillWithData() {
         List<Data> data= new ArrayList<>();
 
-        int i=1;
-        for(String x:TTs){
-            data.add(new Data(x,"LEVEL " + LevelNo + "TT " + i, R.drawable.one));
+        String[] TTs= {getString(R.string.oneone),getString(R.string.onetwo),getString(R.string.onethree),
+        getString(R.string.onefour),getString(R.string.onefive), getString(R.string.onesix),getString(R.string.oneseven)};
+
+        int i=0;
+        for(String x: TTs){
+            data.add(new Data(TTs[i], "LEVEL 1 TT " + (i+1), R.drawable.one));
             i++;
         }
 
