@@ -4,4 +4,12 @@
     <string name="action_search">Search</string>
     <string name="title_activity_searchable">Search</string>
     <string name="title_activity_level1">Level 1</string>
+    <string name="oneone">Denise and Fleas</string>
+    <string name="onetwo">Santa\'s Suit</string>
+    <string name="onethree">Ice Cream Screams</string>
+    <string name="onefour">Slimy Snails</string>
+    <string name="onefive">Sinking Sands</string>
+    <string name="onesix">Black Dog</string>
+    <string name="oneseven">Tom</string>
+    <string name="oneeight">Yelling Yeti</string>
 </resources>
