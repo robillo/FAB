@@ -88,7 +88,9 @@ public class Level1 extends AppCompatActivity {
         List<Data> data= new ArrayList<>();
 
         String[] TTs= {getString(R.string.oneone),getString(R.string.onetwo),getString(R.string.onethree),
-        getString(R.string.onefour),getString(R.string.onefive), getString(R.string.onesix),getString(R.string.oneseven)};
+        getString(R.string.onefour),getString(R.string.onefive), getString(R.string.onesix),getString(R.string.oneseven),getString(R.string.oneeight),getString(R.string.onenine),
+        getString(R.string.oneten),getString(R.string.oneeleven),getString(R.string.enetwelve),getString(R.string.onethirteen),
+        getString(R.string.onefourteen),getString(R.string.fifteen)};
 
         int i=0;
         for(String x: TTs){
