@@ -18,7 +18,7 @@ import com.appbusters.robinkamboj.fab.ui.Level1_extended;
 public class View_Holder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
     CardView cv;
-    Context context;
+    private final Context context;
     public TextView title;
     public TextView description;
     public ImageView imageView;
@@ -29,13 +29,24 @@ public class View_Holder extends RecyclerView.ViewHolder implements View.OnClick
         title= (TextView) viewItem.findViewById(R.id.title);
         description= (TextView) viewItem.findViewById(R.id.description);
         imageView= (ImageView) viewItem.findViewById(R.id.imageView);
+        context=itemView.getContext();
     }
 
     @Override
     public void onClick(View view) {
+        final Intent intent;
+        switch (this.getAdapterPosition()){
+            case 0:
+                intent =  new Intent(context, Level1_extended.class);
+                break;
+            case 1:
+                intent =  new Intent(context, Level1_extended.class);
+                break;
+            default:
+                intent =  new Intent(context, Level1_extended.class);
+                break;
+        }
+        context.startActivity(intent);
     }
 
-    public interface OnItemClickListener{
-        public void onItemClick(View view, int position);
-    }
 }

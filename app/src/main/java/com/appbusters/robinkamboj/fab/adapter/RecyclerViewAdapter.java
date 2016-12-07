@@ -22,8 +22,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<View_Holder>{
     List<Data> list = Collections.emptyList();          //Linked List
     Context context;
 
-    View_Holder.OnItemClickListener mItemClickListener;
-
     public RecyclerViewAdapter(List<Data> list, Context context) {
         this.list = list;
         this.context = context;
