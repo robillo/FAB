@@ -29,6 +29,7 @@ public class View_Holder extends RecyclerView.ViewHolder implements View.OnClick
         title= (TextView) viewItem.findViewById(R.id.title);
         description= (TextView) viewItem.findViewById(R.id.description);
         imageView= (ImageView) viewItem.findViewById(R.id.imageView);
+        viewItem.setOnClickListener(this);
     }
 
     @Override
