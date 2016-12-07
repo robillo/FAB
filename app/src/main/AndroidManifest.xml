@@ -33,7 +33,8 @@
         <activity
             android:name=".ui.Level1"
             android:label="@string/title_activity_level1"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.Level1_extended"></activity>
     </application>
 
 </manifest>
