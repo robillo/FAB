@@ -29,12 +29,13 @@ public class View_Holder extends RecyclerView.ViewHolder implements View.OnClick
         title= (TextView) viewItem.findViewById(R.id.title);
         description= (TextView) viewItem.findViewById(R.id.description);
         imageView= (ImageView) viewItem.findViewById(R.id.imageView);
-        viewItem.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        Intent i= new Intent(context, Level1_extended.class);
-        context.startActivity(i);
+    }
+
+    public interface OnItemClickListener{
+        public void onItemClick(View view, int position);
     }
 }
