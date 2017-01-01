@@ -92,6 +92,10 @@ public class MainActivity extends AppCompatActivity {
             fabR1.startAnimation(fab_open);
             fabL2.startAnimation(fab_open);
             fabR2.startAnimation(fab_open);
+            fabL1.setVisibility(View.VISIBLE);
+            fabL2.setVisibility(View.VISIBLE);
+            fabR1.setVisibility(View.VISIBLE);
+            fabR2.setVisibility(View.VISIBLE);
             FabClosed=false;
         }
         else{
@@ -100,6 +104,10 @@ public class MainActivity extends AppCompatActivity {
             fabR1.startAnimation(fab_close);
             fabL2.startAnimation(fab_close);
             fabR2.startAnimation(fab_close);
+            fabL1.setVisibility(View.INVISIBLE);
+            fabL2.setVisibility(View.INVISIBLE);
+            fabR1.setVisibility(View.INVISIBLE);
+            fabR2.setVisibility(View.INVISIBLE);
             FabClosed=true;
         }
     }
